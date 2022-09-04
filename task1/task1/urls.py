@@ -23,11 +23,8 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("createpost/", views.createpost, name="create_post"),
     path("createbook/", views.createbook, name="create_book"),
-    # path("", views.get_all_posts, name="show_post"),
     path("", GetAllPosts.as_view(), name="show_post"),
-
     path("showbirds", views.get_all_birds, name="show_birds"),
-
     path("login/", views.LoginUser.as_view(), name="login"),
     path("logout/", views.logout_user, name="logout"),
     path("register/", views.RegisterUser.as_view(), name="register")
