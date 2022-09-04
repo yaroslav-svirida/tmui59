@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method = "post">
+    <style>
+            form {
+                border-spacing: 0 10px;
+                font-family: 'Open Sans', sans-serif;
+                font-weight: bold;
+            }
+            </style>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type = 'submit' class="btn btn-dark">Войти</button>
+</form>
+
+{% endblock %}

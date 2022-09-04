@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table id="myTable" class="table">
+    <style>
+        TABLE {
+
+            padding-left: 15rem;
+            padding-right: 15rem;
+
+        }
+
+
+    </style>
+    <p class="fs-4">Таблица Постов</p>
+    <thead class="table-dark">
+    <tr>
+        <th>id</th>
+        <th>text</th>
+        <th>name</th>
+        <th>table_name</th>
+        <th>time_of_create</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for topic in topics %}
+    <tr>
+
+        <td>{{ topic.id }}</td>
+        <td>{{ topic.name }}</td>
+        <td>{{ topic.text }}</td>
+        <td>{{ topic.table_name }}</td>
+        <td>{{ topic.time_of_create }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<button class="btn btn-dark">
+    <a href='{%  url "create_post" %}'> Create Post</a>
+</button>
+
+<table id="myTable2" class="table">
+
+
+    <p class="fs-4">Таблица Книг</p>
+    <thead class="table-dark">
+    <tr>
+        <th>id</th>
+        <th>text</th>
+        <th>name</th>
+        <th>table_name</th>
+        <th>time_of_create</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for book in books %}
+    <tr>
+
+        <td>{{ book.id }}</td>
+        <td>{{ book.name }}</td>
+        <td>{{ book.text }}</td>
+        <td>{{ book.table_name }}</td>
+        <td>{{ book.time_of_create }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<button class="btn btn-dark">
+    <a href='{%  url "create_book" %}'> Create book</a>
+</button>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#myTable').DataTable();
+    });
+
+
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#myTable2').DataTable();
+    });
+
+
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div id='reg_form'>
+    <h1>{{title}}</h1>
+    <ul class=reg_list>
+        <form id='realtime' action='{% url "create_post" %}' method="POST">
+            {% csrf_token %}
+            <div class='reg_title'>{{ form.as_p }}</div>
+            <a href="{% url 'create_post'  %}">
+                <button class="btn btn-dark" type='submit'>Добавить Post</button>
+            </a>
+        </form>
+        <a href="{% url 'show_post'  %}">
+            <button class="btn btn-dark" type='submit'>Все записи</button>
+        </a>
+    </ul>
+
+</div>
+
+{% endblock %}
